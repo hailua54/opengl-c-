@@ -104,10 +104,13 @@ void reshape(int w, int h)
 	*/
 	const GLfloat zNear = 0.01f, zFar = 100.0f, fieldOfView = 40.0f*3.14159/180.0;
 	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
 	GLfloat size = zNear * tanf(fieldOfView / 2.0f);
 	GLfloat aspectRatio = w / h;
 	glFrustum(-size, size, -size / aspectRatio, size / aspectRatio, zNear, zFar);
 	glTranslatef(0.0f, -0.5f, -2.5f);
+	glMatrixMode(GL_MODELVIEW);
+	glLoadIdentity();
 }
 
 /* xử lý sự kiện keyboard */
