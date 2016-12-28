@@ -56,9 +56,10 @@ void display(void)
 	cout << " sx: " << sx << " sy: " << sy << " sz: " << sz << endl;
 
 	// APPROACH 2: using gluProject manual ----------------------------------------------------------------------------------------
-	glPushMatrix();
+	
 	GLdouble p1[4] = { wx,wy,wz,1 };
 	glMatrixMode(GL_MODELVIEW);
+	glPushMatrix();
 	
 	glLoadMatrixd(projection);
 	glMultMatrixd(modelview);
